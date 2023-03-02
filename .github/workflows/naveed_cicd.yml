@@ -26,7 +26,7 @@ jobs:
           USER_NAME : ${{ secrets.USER_NAME  }}
         run: |
           echo "$PRIVATE_KEY" > web-php-server.pem && chmod 400 web-php-server.pem
-          ssh -i web-php-server.pem `${USER_NAME}@${HOSTNAME}`
+          ssh -i web-php-server.pem ubuntu@13.213.156.49
           
             #Now we have got the access of EC2 and we will start the deploy .
             cd /var/www/html/cicd-training &&
