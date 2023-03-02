@@ -1,0 +1,32 @@
+name: CI/CD counter app
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  #First we will log into ec2 and take pull of main , then we will deploy in EC2
+  take-pull:
+    name: taking-pull-of-main-branch
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: step-1-taking-pull
+        env:
+          PRIVATE_KEY: ${{ secrets.AWS_PRIVATE_KEY  }}
+          HOSTNAME : ${{ secrets.HOSTNAME  }}
+          USER_NAME : ${{ secrets.USER_NAME  }}
+
+        run: |
+          echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
+          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
+          
+            #Now we have got the access of EC2 and we will start the deploy .
+            cd /var/www/html/cicd-training &&
+            git checkout main &&
+            git reset --hard origin/main &&
+            git pull origin main &&
+            nvm use 14 &&
+            npm run build
+          
