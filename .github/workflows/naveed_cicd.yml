@@ -9,10 +9,13 @@ jobs:
   take-pull:
     name: taking-pull-of-main-branch
     runs-on: ubuntu-latest
-
+    concurrency: ci-${{github.ref}}
     steps:
       - name: checkout-actions
         uses: actions/checkout@v3
+
+      - name: setup-node-for-use-with-actions-step-name
+        uses: actions/setup-node@v3
         with:
           node-version: 14.x
 
