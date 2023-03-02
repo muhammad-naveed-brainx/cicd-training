@@ -35,4 +35,5 @@ jobs:
             git pull origin main &&
             nvm use 14 &&
             npm run build
+          '
           
