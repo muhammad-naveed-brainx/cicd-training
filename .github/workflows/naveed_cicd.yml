@@ -11,8 +11,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - name: step-1-taking-pull
+      - name: checkout-actions
+        uses: actions/checkout@v3
+        with:
+          node-version: 14.x
         env:
           PRIVATE_KEY: ${{ secrets.AWS_PRIVATE_KEY  }}
           HOSTNAME : ${{ secrets.HOSTNAME  }}
