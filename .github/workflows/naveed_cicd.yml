@@ -1,4 +1,4 @@
-name: CI/CD Testing
+name: CI/CD Testing for vue project
 
 on:
   push:
