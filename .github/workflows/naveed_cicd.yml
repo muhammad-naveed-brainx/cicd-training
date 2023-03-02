@@ -1,8 +1,8 @@
-name: CI/CD counter app
+name: CI/CD Testing
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   #First we will log into ec2 and take pull of main , then we will deploy in EC2
