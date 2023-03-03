@@ -20,9 +20,10 @@ jobs:
           node-version: 14.x
 
       - name: check-environment-variable
-        tempk: ${{ secrets.SSH_PRIVATE_KEY  }}
-        hname: ${{ variables.HOSTNAME  }}
-        uname: ${{ variables.USERNAME  }}
+        with:
+          tempk: ${{ secrets.SSH_PRIVATE_KEY  }}
+          hname: ${{ variables.HOSTNAME  }}
+          uname: ${{ variables.USERNAME  }}
         run: |
           echo "$tempk"
           echo "$hname"
