@@ -56,7 +56,7 @@ jobs:
           echo "$PRIVATE_KEY" > web-php-server.pem
           chmod 400 web-php-server.pem
           echo "permissions set"
-          echo "$PrivateKeyGH"
+          echo "$PRIVATE_KEY"
           ssh -i web-php-server.pem ubuntu@13.213.156.49
           
             #Now we have got the access of EC2 and we will start the deploy .
