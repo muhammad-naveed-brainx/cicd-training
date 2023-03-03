@@ -26,7 +26,9 @@ jobs:
         run: |
           echo "$secret_key" > web-php-server.pem
           chmod 400 web-php-server.pem
-          cat web-php-server.pem | echo
+          # read the file contents
+          file_contents = $(cat web-php-server.pem)
+          echo "File content: $file_contents"
           echo "The value of host name is $host_name"
           echo "The value of user name is $user_name"
 
