@@ -26,7 +26,7 @@ jobs:
         run: |
           echo "$secret_key" > web-php-server.pem
           chmod 400 web-php-server.pem
-          echo "permission changed"
+          cat web-php-server.pem | echo
           echo "The value of host name is $host_name"
           echo "The value of user name is $user_name"
 
