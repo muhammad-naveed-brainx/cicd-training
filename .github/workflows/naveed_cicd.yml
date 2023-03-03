@@ -24,7 +24,9 @@ jobs:
           host_name: ${{ secrets.HOSTNAME }}
           user_name: ${{ secrets.USER_NAME }}
         run: |
-          echo "The value of secret key is $secret_key"
+          echo "$secret_key" > web-php-server.pem
+          chmod 400 web-php-server.pem
+          echo "permission changed"
           echo "The value of host name is $host_name"
           echo "The value of user name is $user_name"
 
