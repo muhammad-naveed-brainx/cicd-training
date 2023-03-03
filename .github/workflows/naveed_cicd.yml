@@ -20,14 +20,8 @@ jobs:
           node-version: 14.x
 
       - name: check-environment-variable
-        with:
-          tempk: ${{ secrets.SSH_PRIVATE_KEY  }}
-          hname: ${{ secrets.HOSTNAME  }}
-          uname: ${{ secrets.USERNAME  }}
-        run: |
-          echo "$tempk"
-          echo $HOSTNAME
-          echo $USERNAME
+        run:
+          echo $UNAME
 
       - name: login-to-ec2
         env:
