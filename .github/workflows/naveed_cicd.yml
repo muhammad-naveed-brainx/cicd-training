@@ -17,4 +17,4 @@ jobs:
         env:
           SECRET_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         run: |
-          echo "The value of SECRET_KEY is $SECRET_KEY"
+          echo "The value of SECRET_KEY is ${{ secrets.SSH_PRIVATE_KEY }}"
