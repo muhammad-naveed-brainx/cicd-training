@@ -33,7 +33,5 @@ jobs:
           git checkout main &&
           git reset --hard origin/main &&
           git pull origin main &&
-          nvm use 14 &&
-          npm run build
           '
           echo "Deployment commands run successfully"
