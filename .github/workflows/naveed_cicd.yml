@@ -55,7 +55,7 @@ jobs:
           echo "$PRIVATE_KEY" > web-php-server.pem
           chmod 400 web-php-server.pem
           echo "permissions set"
-          ssh -i web-php-server.pem ubuntu@13.213.156.49
+          ssh -i web-php-server.pem ubuntu@13.213.156.49 /bin/bash <<'EOT'
           
             #Now we have got the access of EC2 and we will start the deploy .
             cd /var/www/html/cicd-training &&
