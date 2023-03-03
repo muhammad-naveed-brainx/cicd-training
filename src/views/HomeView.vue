@@ -4,6 +4,7 @@ import TheWelcome from '../components/TheWelcome.vue'
 
 <template>
   <main>
-    <TheWelcome />
+    <h1>CI/CD from GitHub to AWS EC2 using GitHub action</h1>
+    <p>Presented By: Muhammad Naveed</p>
   </main>
 </template>
