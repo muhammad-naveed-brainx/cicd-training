@@ -27,11 +27,13 @@ jobs:
           echo "$secret_key" > web-php-server.pem
           chmod 400 web-php-server.pem
           # read the file contents
-          ssh -o StrictHostKeyChecking=no -i web-php-server.pem ${user_name}@${host_name} ''
-          echo "The value of host name is $host_name"
-          echo "The value of user name is $user_name"
-
-      - name: get values in next step
-        run: |
-          echo "The value of host name is $host_name"
-          echo "The value of user name is $user_name"
+          ssh -o StrictHostKeyChecking=no -i web-php-server.pem ${user_name}@${host_name} '
+          #Now we have got the access of EC2 and we will start the deploy
+          cd /var/www/html/cicd-training &&
+          git checkout main &&
+          git reset --hard origin/main &&
+          git pull origin main &&
+          nvm use 14 &&
+          npm run build
+          '
+          echo "Deployment commands run successfully"
