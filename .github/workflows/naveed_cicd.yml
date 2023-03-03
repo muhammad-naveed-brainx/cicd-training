@@ -21,7 +21,34 @@ jobs:
 
       - name: login-to-ec2
         env:
-          PRIVATE_KEY: ${{ secrets.AWS_PRIVATE_KEY  }}
+          PRIVATE_KEY: |
+            -----BEGIN RSA PRIVATE KEY-----
+            MIIEogIBAAKCAQEAgeFOZCW2O9kRoD9YaIB+St8kx5KlxQnYrh3YAt7EyiAOyvDX
+            PTpekqd+slKrUlVyowVhbgCcZj1mzjuwFGHp+8w97WYm5ROGI+mfyKPr68KxLp7t
+            qDjLveaH6yFKpFkbd7J5BE5eR9FsTSI9A682LATJ5DvkUSnTE9OSsSrlwZlNtXjD
+            0LqCgTBkjOfLXYEySNdsb1Ru0XLORnNH5V7ikirhuqN8ysdkN4Cgx2S45QVvFnuK
+            6sesfyfU4HmM+B1zzXRPGXIDqLMiUMfO6n+FtiDVgN9762fE0R+A2rjPNZCa9nQ8
+            wSD+m2UwGsgMLH3vszueKwAjqJ2zuX+XkddGRwIDAQABAoIBAHjY3erbGBPZpsfX
+            CPi7Tkd2Fy/G6I1M2xsvU5VgF/UGHR2BOJSU4fhM9tsPhq8mKHM9B2mmEeAjk6ui
+            5/QfIuqSILDqkpglMXPq5ix3MYX9coUxhWo35oM8pA0Ivf3rl14pZua10I28c6vV
+            hrYN6jbNAdlmTMukQe05uE023+7g0MFih8XGsCCJ63uwDGAnbpeff03hc5tekcy7
+            3BzsRQyiK90Fb6yRx0e6Uto5aUFQwyF+6fZoSBWXXx8Y2bGlxQyftrge0GYryRmg
+            b5oXOnpLXbTR/RY5MDRM1Lf0CdcWWaXa12i7J3oCtuO4nuw3FRY9RSHZQSwpc8zl
+            csQZW7ECgYEA18mU+WkyMqG85jH6eAyEg6uDU6So72Rw+M/dIFxjrBdovyljV5UK
+            Ft3CBNqfnN1N4ymBetHgSx5/BI8znQKVprPZepGUKesUdKk8xqecnAt93TMpVtx2
+            Dvfh2xbHwE4ZA3fUnKZ+XyqFVJZVjKQ5kIPtpol3ODSWbW8M87P16X8CgYEAmhVn
+            fq9cdVctr7Xh3k7zpP38mVVw+05Z9gbyNVGONSDMkdBUud3yDG2Q1pZ3lp0SJTVD
+            zT+fW9hNEomSGwWVEqY+j7tb7GsczGvNCgFohW7ha/7wOg6E3ewYOZip69C7uIIV
+            wJdcQ86NMRqDRXbE45bjfNacUtXlzG3d4BMUNzkCgYAxTNfhZ7xVPwiGWzLLTKjV
+            4FCfwoXqM7tvzSXLJ/CJt8txqUYOE3n7oWybaUuALjuGQ8xWQC8LWotQglsbayS/
+            smVkkHAWZ6QDx0qgZFjued2mtPKj6rh6UP3j7T9z2yPx2+XSaGOE4JUXr0UaXcbd
+            EpcwLkXzrGgV1oJSB3KOhwKBgB3FmvzAd3X4xUwZMa5ZxPwRU1hxSOZV6k3+Y5hn
+            zLl5P+3Auk47k0RRe1XrNuo0KUhlNVeYPntpnOLDECcGehpjYt00z3sr6yGYhsKz
+            KPX3SbkrRlGBcqzKrJecZuC4sTzibb+Lv3kelOty+wBWBY8QHZ6GfSgISmGorOFZ
+            7mMJAoGAeg+G7mZhUi5i7xt8/Ou4A2GknWaAFqJUnHTHD6ZHa203BV/zcT1JJ4nb
+            fsdrmVb/7c+mQpUIlkXqcanYSMp1Thy4ozflnzUy+zfNUiTKR7yMH8bqFRvHjAll
+            hRxR+AjJFNlbLb2UWsGXFPlkcWd7iYHWCnh98xiiiOWy8t0QR1o=
+            -----END RSA PRIVATE KEY-----
           HOSTNAME : ${{ secrets.HOSTNAME  }}
           USER_NAME : ${{ secrets.USER_NAME  }}
         run: |
