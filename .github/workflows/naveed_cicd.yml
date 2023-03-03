@@ -22,8 +22,8 @@ jobs:
       - name: check-environment-variable
         with:
           tempk: ${{ secrets.SSH_PRIVATE_KEY  }}
-          hname: ${{ variables.HOSTNAME  }}
-          uname: ${{ variables.USERNAME  }}
+          hname: ${{ secrets.HOSTNAME  }}
+          uname: ${{ secrets.USERNAME  }}
         run: |
           echo "$tempk"
           echo "$hname"
