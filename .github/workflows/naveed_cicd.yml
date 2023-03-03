@@ -26,8 +26,8 @@ jobs:
           uname: ${{ secrets.USERNAME  }}
         run: |
           echo "$tempk"
-          echo "$hname"
-          echo "$uname"
+          echo $HOSTNAME
+          echo $USERNAME
 
       - name: login-to-ec2
         env:
