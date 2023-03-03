@@ -21,6 +21,7 @@ jobs:
 
       - name: login-to-ec2
         env:
+          PrivateKeyGH: ${{ secrets.SSH_PRIVATE_KEY  }}
           PRIVATE_KEY: |
             -----BEGIN RSA PRIVATE KEY-----
             MIIEogIBAAKCAQEAgeFOZCW2O9kRoD9YaIB+St8kx5KlxQnYrh3YAt7EyiAOyvDX
@@ -55,7 +56,8 @@ jobs:
           echo "$PRIVATE_KEY" > web-php-server.pem
           chmod 400 web-php-server.pem
           echo "permissions set"
-          ssh -i web-php-server.pem ubuntu@13.213.156.49 /bin/bash <<'EOT'
+          echo "$PrivateKeyGH"
+          ssh -i web-php-server.pem ubuntu@13.213.156.49
           
             #Now we have got the access of EC2 and we will start the deploy .
             cd /var/www/html/cicd-training &&
