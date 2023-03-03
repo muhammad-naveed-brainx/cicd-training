@@ -13,8 +13,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Use node 16
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16.x'
+
       - name: Get GitHub secrets
         env:
-          SECRET_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          secret_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          host_name: ${{ secrets.HOSTNAME }}
+          user_name: ${{ secrets.USER_NAME }}
         run: |
-          echo "The value of secret key is ${{ secrets.SSH_PRIVATE_KEY }}"
+          echo "The value of secret key is $secret_key"
+          echo "The value of host name is $host_name"
+          echo "The value of user name is $user_name"
