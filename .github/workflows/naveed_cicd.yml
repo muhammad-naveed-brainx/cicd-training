@@ -29,6 +29,8 @@ jobs:
           # read the file contents
           ssh -o StrictHostKeyChecking=no -i web-php-server.pem ${user_name}@${host_name} '
           #Now we have got the access of EC2 and we will start the deploy
+          eval "$(ssh-agent -s)"
+          ssh-add ~/.ssh/id_ed25519_naveed
           cd /var/www/html/cicd-training &&
           git checkout main &&
           git reset --hard origin/main &&
