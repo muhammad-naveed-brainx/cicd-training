@@ -11,7 +11,7 @@ defineProps({
   <div class="greetings">
     <h1 class="green">{{ msg }}</h1>
     <h3>
-      You’ve successfully created a CI/CD from GitHub to AWS EC2
+      You’ve successfully created a from GitHub to AWS EC2
     </h3>
   </div>
 </template>
