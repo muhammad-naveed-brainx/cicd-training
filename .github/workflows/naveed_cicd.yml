@@ -1,4 +1,4 @@
-name: Get GitHub Secrets
+name: CICD to aws ec2
 
 on:
   push:
@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: 16.x
 
-      - name: Get GitHub secrets
+      - name: Get GitHub secrets and run script
         env:
           secret_key: ${{ secrets.SSH_PRIVATE_KEY }}
           host_name: ${{ secrets.HOSTNAME }}
